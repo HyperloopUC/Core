@@ -10,7 +10,13 @@ DeviceStatus overallStatus;
 void setup(){
     overallStatus.Initialize(SuId_SuIdCount);
     suIdManager = SuIdManager();
-    serialConsole.Initialize(&suIdManager);
+    overallStatus = serialConsole.Initialize(&suIdManager);
+   if(overallStatus.IsError()){
+        serialConsole.Print("Error");
+        //NOTE: This wouldn't print because the serial port would fail 
+    }
+
+
 }
 
 void loop(){
@@ -19,4 +25,7 @@ void loop(){
         serialConsole.Print("Error");
         //NOTE: This wouldn't print because the serial port would fail 
     }
+
+    
 }
+

@@ -6,6 +6,8 @@ enum SoftwareUnitIds{
     SuId_DeviceStatus = 0,
     SuId_SuManager,
     SuId_SerialConsole,
+    SuId_AnalogWire,
+    SuId_CurrentSensor,
 
     SuId_SuIdCount,
 };
